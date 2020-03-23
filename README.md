@@ -12,6 +12,7 @@
 - 所有的文件相当于在/public/mirror 下
 - 部署之后推荐使用ftp对文件进行操作
 - 如果需要加密访问或者实现在浏览器中对文件操作可以[参考](https://github.com/508lab/outbreak)
+- 欢迎PR
 
 ```bash
 $ npm i
