@@ -7,6 +7,9 @@
 - Bootstrap
 - 无需使用数据库之类的
 
+### 版本要求
+- node>v10.10.0
+
 
 ### 开发
 - 所有的文件相当于在/public/mirror 下
@@ -20,7 +23,7 @@ $ npm run dev
 $ open http://localhost:7001/
 ```
 
-### 部署
+### 相关链接
 - [egg](https://eggjs.org)
 
 ----------

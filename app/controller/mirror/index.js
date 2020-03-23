@@ -12,25 +12,13 @@ class MirrorController extends Controller {
     async index() {
         const { ctx } = this;
         let q = ctx.request.body.q || '/';
-        let basePath = this.config.baseDir + '/app/public/mirror' + q;
-        const arr = await fs.readdirSync(basePath);
+        const basePath = this.config.baseDir + '/app/public/mirror' + q;
+        const arr = await fs.readdirSync(basePath, { withFileTypes: true });
         let list = {
-            files: [],
-            dirs: []
+            files: arr.filter((ele) => { return !ele.isDirectory() }),
+            dirs: arr.filter((ele) => { return ele.isDirectory() })
         };
-        const prom = await arr.map(async function (ele) {
-            if (await fs.statSync(basePath + ele).isDirectory()) {
-                list.dirs.push(ele);
-            } else {
-                list.files.push(ele);
-            }
-        });
-        Promise.all(prom).then(() => {
-            ctx.body = { code: 1, data: list };
-        }).catch((err) => {
-            ctx.logger.error(err);
-            ctx.body = { code: 0 }
-        })
+        ctx.body = { code: 1, data: list };
     }
 }
 

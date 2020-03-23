@@ -92,12 +92,12 @@
             let html = '';
             mirrordom.html(html);
             dirs.map(function (ele, index) {
-                html += `<div class="alert alert-primary dir" role="alert">${ele}</div>`
+                html += `<div class="alert alert-primary dir" role="alert">${ele.name}</div>`
             });
 
             files.map(function (ele, index) {
-                html += `<div class="alert alert-light files" role="alert">${ele}
-                            <span class="badge badge-primary dow" data-file="${ele}">下载</span>
+                html += `<div class="alert alert-light files" role="alert">${ele.name}
+                            <span class="badge badge-primary dow" data-file="${ele.name}">下载</span>
                         </div>`;
             });
             mirrordom.html(html);
