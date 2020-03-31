@@ -16,6 +16,11 @@
 - 部署之后推荐使用ftp对文件进行操作
 - 如果需要加密访问或者实现在浏览器中对文件操作可以[参考](https://github.com/508lab/outbreak)
 - 欢迎PR
+```bash
+$ npm i
+$ npm run dev
+$ open http://localhost:7001/
+```
 
 ### Docker
 ```bash
@@ -24,11 +29,7 @@ $ docker run -it -p 7001:7001 egg:cloud
 $ docker exec -it container_id  /bin/bash
 $ npm start && exit
 ```
-```bash
-$ npm i
-$ npm run dev
-$ open http://localhost:7001/
-```
+
 
 ### 相关链接
 - [egg](https://eggjs.org)
