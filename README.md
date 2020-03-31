@@ -17,6 +17,13 @@
 - 如果需要加密访问或者实现在浏览器中对文件操作可以[参考](https://github.com/508lab/outbreak)
 - 欢迎PR
 
+### Docker
+```bash
+$ docker build -t egg:cloud .
+$ docker run -it -p 7001:7001 egg:cloud
+$ docker exec -it container_id  /bin/bash
+$ npm start && exit
+```
 ```bash
 $ npm i
 $ npm run dev
