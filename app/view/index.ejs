@@ -141,8 +141,9 @@
         });
 
         function download(file) {
-            window.open(window.location.origin + '/public/mirror' + nowDir + file)
+            window.location.href = window.location.origin + `/api/v1/mirror/download?name=${encodeURIComponent(file)}&path=${encodeURIComponent(nowDir)}`;
         }
+        
         let search_tag = true;
 
         $('#search').bind('input propertychange', function () {
